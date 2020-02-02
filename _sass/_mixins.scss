@@ -1,0 +1,33 @@
+// Media Queries
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+// Font size handler
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Wrapper
+%clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%wrapper {
+  max-width: calc(#{$content-width} - #{$spacing-unit * 2});
+  padding-left: $spacing-unit;
+  padding-right: $spacing-unit;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %clearfix;
+  
+  @include media-query($on-palm) {
+    max-width: calc(#{$content-width} - #{$spacing-unit});
+    padding-left: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
+  }
+}

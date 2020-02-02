@@ -1,0 +1,21 @@
+# Site settings
+title: Brand
+email: ""
+description: >-
+  Site description
+url: "https://blp.com.br"
+baseurl: ""
+
+
+# Build settings
+permalink: pretty
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+
+# SEO
+lang: pt-BR

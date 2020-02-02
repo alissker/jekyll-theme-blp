@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body,
+p, ul, ol, dl,
+blockquote, pre,
+figure, table, iframe,
+audio, video, embed,
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('/assets/images/bg.png');
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $color-text;
+  margin-top: 64px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*
+  Text Elements
+*/
+
+p, ul, ol, dl,
+blockquote, pre,
+figure, table, iframe,
+h1, h2, h3, h4, h5, h6 {
+  &:not(:last-child) {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+strong, b, th {
+  font-weight: bold;
+}
+
+em, i, blockquote {
+  font-style: italic;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  transition: color 250ms ease;
+  
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+}

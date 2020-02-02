@@ -1,0 +1,209 @@
+.wrapper {
+  @extend %wrapper;
+}
+
+.site {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  
+  .site-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+}
+
+/*
+  Site Header
+*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: $color-background;
+  -webkit-backdrop-filter: saturate(180%) blur($spacing-unit);
+  backdrop-filter: saturate(180%) blur($spacing-unit);
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+    .site-title {
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      margin-bottom: 0;
+      
+      &:last-child {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    .site-menu {
+      margin-left: auto;
+      
+      #main-menu-trigger,
+      .menu-trigger {
+        display: none;
+      }
+      
+      .menu-trigger {
+        @include media-query($on-palm) {
+          display: block;
+        }
+        
+        .svg-icon {
+          vertical-align: middle;
+          fill: currentColor;
+          transition: fill 250ms ease;
+          
+          &:hover,
+          &:focus {
+            fill: $color-accent; 
+          }
+        }
+      }
+      
+      #main-menu-trigger:checked + .menu-trigger {
+        .svg-icon {
+          fill: $color-accent;
+        }
+      }
+      
+      .main-menu {
+        display: inline-flex;
+        list-style: none;
+        font-weight: normal;
+        @include relative-font-size(0.85);
+        
+        @include media-query($on-palm) {
+          display: block;
+          background: $color-background;
+          -webkit-backdrop-filter: saturate(180%) blur($spacing-unit);
+          backdrop-filter: saturate(180%) blur($spacing-unit);
+          position: absolute;
+          top: calc(#{100%} + #{$spacing-unit});
+          left: 0;
+          right: 0;
+          z-index: 3;
+          padding: $spacing-unit $spacing-unit / 2;
+          opacity: 0;
+          visibility: hidden;
+          transition-property: opacity, visibility;
+          transition-duration: 250ms;
+          transition-timing-function: ease;
+          
+          .menu-item {
+            text-align: center;
+            
+            a {
+              display: block;
+            }
+          }
+        }
+        
+        .menu-item:not(:last-child) {
+          margin-right: $spacing-unit;
+          
+          @include media-query($on-palm) {
+            margin-right: 0;
+            margin-bottom: $spacing-unit / 2;
+          }
+        }
+      }
+      
+      #main-menu-trigger:checked ~ .main-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+/*
+  Site Content
+*/
+.site-content {
+  background-color: rgba(#fff, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur($spacing-unit);
+  backdrop-filter: saturate(180%) blur($spacing-unit);
+  color: $color-background;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+}
+
+.content {
+  .content-header {
+    margin-bottom: $spacing-unit;
+    
+    .content-title {
+      text-align: center;
+    }
+    
+    &::after {
+      display: block;
+      content: " ";
+      width: 50px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $color-accent;
+      margin: $spacing-unit / 2 auto $spacing-unit;
+    }
+  }
+}
+
+.page-home {
+  .content-body {
+    ul {
+      margin-top: $spacing-unit * 2;
+      margin-bottom: $spacing-unit * 2;
+      list-style: none;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      @include relative-font-size(1.25);
+      
+      @include media-query($on-palm) {
+        @include relative-font-size(1.125);
+      }
+      
+      li {
+        margin-bottom: $spacing-unit;
+      }
+    }
+  }
+}
+
+/*
+  Site Footer
+*/
+.site-footer {
+  .wrapper {
+    background-color: rgba(#fff, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur($spacing-unit);
+    backdrop-filter: saturate(180%) blur($spacing-unit);
+    color: $color-background;
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    border-top: 1px solid $color-details;
+  }
+  
+  .disclaimer {
+    @include relative-font-size(0.75);
+    
+    img {
+      float: left;
+      max-width: 150px;
+      padding: 0 $spacing-unit / 2 $spacing-unit / 2 0;
+    }
+  }
+}
