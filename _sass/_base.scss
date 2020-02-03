@@ -51,6 +51,7 @@ em, i, blockquote {
   font-style: italic;
 }
 
+// Links
 a {
   color: currentColor;
   text-decoration: none;
@@ -60,4 +61,17 @@ a {
   &:focus {
     color: $color-accent;
   }
+}
+
+// Horizontal rule
+
+hr {
+  border: none;
+  display: block;
+  content: " ";
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $color-accent;
+  margin: $spacing-unit / 2 auto $spacing-unit;
 }
