@@ -79,8 +79,10 @@ ol {
 // Links
 a {
   color: currentColor;
-  text-decoration: none;
   transition: color 250ms ease;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: $color-accent;
   
   &:hover,
   &:focus {
