@@ -112,6 +112,11 @@
             
             a {
               display: block;
+              
+              &:hover,
+              &:focus {
+                color: $color-accent;
+              }
             }
           }
         }
@@ -184,6 +189,16 @@
       
       li {
         margin-bottom: $spacing-unit;
+        
+        a {
+          color: currentColor;
+          
+          &:hover,
+          &:focus {
+            color: $color-accent;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
