@@ -38,6 +38,7 @@
     
     a {
       text-decoration: none;
+      color: currentColor;
     }
     
     .site-title {
@@ -87,6 +88,7 @@
         list-style: none;
         font-weight: normal;
         @include relative-font-size(0.85);
+        margin-left: 0;
         
         @include media-query($on-palm) {
           display: block;
