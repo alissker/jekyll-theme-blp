@@ -51,6 +51,31 @@ em, i, blockquote {
   font-style: italic;
 }
 
+// Lists
+ul, ol {
+  margin-left: $spacing-unit;
+  
+  ul, ol {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: square;
+  
+  ul {
+    list-style: disc;
+  }
+}
+
+ol {
+  list-style: decimal;
+  
+  ol {
+    list-style: lower-alpha;
+  }
+}
+
 // Links
 a {
   color: currentColor;

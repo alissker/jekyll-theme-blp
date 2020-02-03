@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{- page.lang | default: site.lang -}}">
   {%- include head.html -%}
-  <body class="{{ page.layout }} {{ page.slug | default: 'home' | prepend: 'page-' }}">
+  <body class="{{ page.layout }} {{ page.dir | remove: '/' | default: 'home' | prepend: 'page-' }}">
     <div id="page" class="site">
       {%- include header.html -%}
     
