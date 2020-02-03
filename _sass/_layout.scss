@@ -159,7 +159,7 @@
       height: 4px;
       border-radius: 2px;
       background-color: $color-accent;
-      margin: $spacing-unit * 2 auto;
+      margin: $spacing-unit / 2 auto $spacing-unit * 2;
     }
   }
 }
