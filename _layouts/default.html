@@ -11,5 +11,10 @@
     
       {%- include footer.html -%}
     </div>
+    
+    {%- if page.layout == "contact" -%}
+      <script src="{%- link /assets/js/jquery.js -%}"></script>
+      <script src="{%- link /assets/js/form.js -%}"></script>
+    {%- endif -%}
   </body>
 </html>

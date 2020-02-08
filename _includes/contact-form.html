@@ -1,0 +1,38 @@
+{%- if page.lang == "en" -%}
+  {%- assign field_name = "Name" -%}
+  {%- assign field_email = "Email" -%}
+  {%- assign field_message = "Message" -%}
+  {%- assign submit_button = "Send message" -%}
+  {%- assign message_success = "Your message was sent successfully. We'll be back at you shortly." -%}
+  {%- assign message_error = "Sorry, but there was an error while trying to send your message. Please, try again." -%}
+{%- else -%}
+  {%- assign field_name = "Nome" -%}
+  {%- assign field_email = "Email" -%}
+  {%- assign field_message = "Mensagem" -%}
+  {%- assign submit_button = "Enviar mensagem" -%}
+  {%- assign message_success = "Sua mensagem foi enviada com sucesso. Nós entraremos em contato em breve." -%}
+  {%- assign message_error = "Ocorreu um erro ao enviar sua mensagem. Tente novamente." -%}
+{%- endif -%}
+
+<form class="contact-form" action="{{- site.form_token | prepend: '//getsimpleform.com/messages?form_api_token' -}}" method="post" data-contact-form>
+  <p>
+    <label for="contact-name">{{- field_name -}}</label><br />
+    <input id="contact-name" type="text" name="name" required />
+  </p>
+  <p>
+    <label for="contact-email">{{- field_email -}}</label><br />
+    <input id="contact-email" type="email" name="email" required />
+  </p>
+  <p>
+    <label for="contact-message">{{- field_message -}}</label><br />
+    <textarea id="contact-message" name="mensagem" required></textarea>
+  </p>
+  <p class="submit-button">
+    <button type="submit">{{- submit_button -}}</button>
+  </p>
+  
+  <div class="feedback-messages">
+    <p class="message error">{{- message_error -}}</p>
+    <p class="message success">{{- message_success -}}</p>
+  </div>
+</form>

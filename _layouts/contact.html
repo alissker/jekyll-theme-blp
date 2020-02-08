@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="content">
+  <header class="content-header">
+    <h1 class="content-title">{{- page.title | default: site.title -}}</h1>
+  </header>
+  
+  <div class="content-body">
+    <div class="contact-infos">
+      {{- content -}}
+    </div>
+    
+    {%- include contact-form.html -%}
+  </div>
+</article>

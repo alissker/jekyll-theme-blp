@@ -98,6 +98,41 @@ hr {
   width: 50px;
   height: 4px;
   border-radius: 2px;
-  background-color: $color-accent;
+  background-color: $color-details;
   margin: $spacing-unit * 2 auto;
+}
+
+/*
+  Forms
+*/
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font: inherit;
+  color: inherit;
+  background: $color-background;
+  border: 2px solid $color-details;
+  border-radius: 6px;
+  padding: $spacing-unit / 4;
+  transition: border-color 250ms ease;
+  display: block;
+  width: 100%;
+  max-width: $on-palm;
+  
+  &:focus,
+  &:active {
+    border-color: $color-accent;
+    outline: none;
+  }
+}
+
+textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+label {
+  font-weight: 700;
+  @include relative-font-size(0.875);
 }

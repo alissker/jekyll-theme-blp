@@ -1,0 +1,21 @@
+// Type and text.
+$base-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Nimbus Sans L", sans-serif !default;
+$base-font-size: 1.6rem !default;
+$base-line-height: 1.5 !default;
+$base-font-weight: 300 !default;
+
+// Color palette.
+$color-text: #f5f5f7 !default;
+$color-accent: #eac381 !default;
+$color-background: rgba(#000,0.8) !default;
+$color-details: lighten($color-background, 25%) !default;
+
+// Structure and spacing variables.
+$content-width: 980px !default;
+$spacing-unit: 20px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
+
+@import "mixins",
+        "base",
+        "layout";
