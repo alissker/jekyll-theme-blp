@@ -1,10 +1,18 @@
 # Site settings
-title: Brand
+title: BLP
 email: ""
 description: >-
   Site description
 url: "https://blp.com.br"
 baseurl: ""
+
+
+# Content settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: pt-BR
 
 
 # Build settings

@@ -29,7 +29,7 @@
   </p>
   <p class="submit-button">
     {%- if page.redirect_to -%}
-      <input type="hidden" name="redirect_to" value="{{- page.redirect_to -}}" />
+      <input type="hidden" name="redirect_to" value="{{- page.redirect_to | absolute_url -}}" />
     {%- endif -%}
     <button type="submit">{{- submit_button -}}</button>
   </p>

@@ -136,3 +136,32 @@ label {
   font-weight: 700;
   @include relative-font-size(0.875);
 }
+
+button[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: $spacing-unit / 4 $spacing-unit / 2;
+  background-color: $color-background;
+  color: $color-text;
+  border: 2px solid $color-details;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+  transition-property: background-color, border-color, color;
+  transition-timing-function: ease;
+  transition-duration: 250ms;
+  cursor: pointer;
+  
+  @include media-query($on-palm) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+    border-color: $color-accent;
+    color: $color-background;
+  }
+}
