@@ -14,7 +14,7 @@
   {%- assign message_error = "Ocorreu um erro ao enviar sua mensagem. Tente novamente." -%}
 {%- endif -%}
 
-<form class="contact-form" action="{{- site.form_token | prepend: '//getsimpleform.com/messages?form_api_token' -}}" method="post" data-contact-form>
+<form class="contact-form" action="{{- site.form_token | prepend: '//getsimpleform.com/messages?form_api_token=' -}}" method="post" data-contact-form>
   <p>
     <label for="contact-name">{{- field_name -}}</label><br />
     <input id="contact-name" type="text" name="name" required />
