@@ -28,11 +28,9 @@
     <textarea id="contact-message" name="mensagem" required></textarea>
   </p>
   <p class="submit-button">
+    {%- if page.redirect_to -%}
+      <input type="hidden" name="redirect_to" value="{{- page.redirect_to -}}" />
+    {%- endif -%}
     <button type="submit">{{- submit_button -}}</button>
   </p>
-  
-  <div class="feedback-messages">
-    <p class="message error">{{- message_error -}}</p>
-    <p class="message success">{{- message_success -}}</p>
-  </div>
 </form>
