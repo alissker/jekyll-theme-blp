@@ -76,6 +76,41 @@ ol {
   }
 }
 
+// Headings
+h2 {
+  text-align: center;
+}
+
+// Tables
+
+table {
+  width: 100%;
+  @include relative-font-size(0.875);
+  overflow-x: auto;
+  
+  @include media-query($on-palm) {
+    display: block;
+  }
+  
+  th,
+  td {
+    text-align: right;
+    padding: $spacing-unit / 4;
+    
+    &:first-child {
+      text-align: left;
+      
+      @include media-query($on-palm) {
+        min-width: 180px;
+      }
+    }
+  }
+  
+  th {
+    border-bottom: 1px solid $color-details;
+  }
+}
+
 // Links
 a {
   color: $color-accent;
